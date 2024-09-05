@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* ビューポートの高さに応じて高さを設定 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ナビゲーションバーのスタイル */
+nav {
+  background-color: #3c3c6c;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  position: fixed; /* ナビバーを画面の上に固定 */
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* 他のコンテンツより上に表示されるようにする */
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+/* 「KITsへようこそ」の部分のスタイル */
+.container {
+  text-align: center;
+  padding: 50px;
+  background-color: #3c3c6c;
+  color: white;
+  margin-top: 20px; /* ナビゲーションバーとの重なりを避けるためにさらに余白を追加 */
+  border-radius: 15px; /* 角を丸くする */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.main-content {
+  padding: 20px;
+  flex: 1; /* メインコンテンツがフレックスボックスの余ったスペースを占める */
+}
+/* グリッドレイアウト */
+.grid {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr); /* 3列に分割 */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* 下段のボックス配置 */
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px; /* 上段と下段の間に余白を追加 */
+}
+
+/* 各ボックスのスタイル */
+.box {
+  background-color: #5d5d9c; /* 背景色を#3c3c6cより少し明るく設定 */
+  color: white;
+  padding: 30px; /* パディングを増やして、内部の余白を拡大 */
+  border-radius: 10px; /* ボックスの角を丸くする */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  height: 200px; /* ボックスの高さを200pxに変更 */
+  width: 300px; /* ボックスの幅を300pxに変更 */
+  display: flex;
+  flex-direction: column; /* リンクと段落を縦に配置 */
+  justify-content: center; /* コンテンツを縦方向に中央揃え */
+  align-items: center; /* コンテンツを横方向に中央揃え */
+  text-align: center; /* テキストを中央揃え */
+}
+
+/* リンクのスタイル */
+.link {
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px; /* リンクとテキストの間のスペースを縮小 */
+  font-size: 1.1em; /* 少し小さいフォントサイズ */
+}
+
+.link:hover {
+  color: #d1d1ff;
+}
+
+p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* スクリーンサイズが小さい場合のレスポンシブ対応 */
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* 小さい画面では1列に変更 */
+  }
+
+  .bottom-row {
+    flex-direction: column; /* 下段のボックスを縦に並べる */
+    align-items: center; /* ボックスを中央揃え */
+  }
+}
+footer {
+  background-color: #3c3c6c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto; /* フッターを一番下に固定 */
+}
